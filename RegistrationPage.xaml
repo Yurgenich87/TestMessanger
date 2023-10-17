@@ -1,0 +1,142 @@
+﻿<Page x:Class="MyMessanger.RegistrationPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MyMessanger"
+             Title="My Messenger" Width="700" Height="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Border Background="#74CC97" 
+                CornerRadius="20"
+                Width="400" 
+                Height="224" 
+                Panel.ZIndex="0" 
+                Margin="150,65,150,31" Grid.RowSpan="2">
+
+            <TextBlock Text="Регистрация нового пользователя" 
+                       FontSize="18" 
+                       HorizontalAlignment="Center" 
+                       Margin="0,10,0,178" FontFamily="Poppins Black" />
+
+        </Border>
+
+        <Button x:Name="EntryButton" 
+                Background="#2976E8" 
+                Content="Зарегистироваться" 
+                Click="RegisterButton_Click" 
+                FontSize="20" 
+                RenderTransformOrigin="1,1"
+                Margin="0,210,0,0" 
+                Grid.Row="1" 
+                FontFamily="Poppins Black" 
+                Panel.ZIndex="10" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top" 
+                Padding="20,1,20,1" 
+                UseLayoutRounding="False" 
+                Width="255" 
+        >
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" 
+                            Value="LightGray" />
+                    <Setter Property="FontStyle" 
+                            Value="Italic" />
+                    <!-- Установите желаемый шрифт здесь -->
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" 
+                                        BorderBrush="{TemplateBinding BorderBrush}" 
+                                        BorderThickness="1" 
+                                        CornerRadius="10">
+                                    <ContentPresenter HorizontalAlignment="Center" 
+                                                      VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform X="0" Y="0"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Border x:Name="Username" 
+                Height="30"  
+                Background="LightGray" 
+                CornerRadius="10" 
+                BorderThickness="1" 
+                Margin="260,125,260,165" 
+                Grid.Row="1">
+            <TextBox x:Name="NewUsernameTextBox" 
+                     BorderThickness="0" 
+                     Background="Transparent" 
+                     Margin="9,4,9,-1" />
+        </Border>
+        <Border x:Name="Password" Height="30" 
+                Background="LightGray" 
+                CornerRadius="10" 
+                BorderThickness="1" 
+                Grid.Row="1" 
+                Margin="260,170,260,120">
+            <PasswordBox x:Name="NewPasswordBox" 
+                         BorderThickness="0" 
+                         Background="Transparent" 
+                         Margin="9,4,9,-1" />
+        </Border>
+        <Button x:Name="ButtonHome"
+                Content="Домой" 
+                Click="SwitchToHomePage" 
+                RenderTransformOrigin="0.5,0.5" 
+                 
+                Grid.Row="1" Margin="165,105,489,189">
+
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" 
+                            Value="LightGray" />
+                    <Setter Property="FontStyle" 
+                            Value="Italic" />
+                    <!-- Установите желаемый шрифт здесь -->
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" 
+                                        BorderBrush="{TemplateBinding BorderBrush}" 
+                                        BorderThickness="1" CornerRadius="10">
+                                    <ContentPresenter HorizontalAlignment="Center" 
+                                                      VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.116"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <TextBlock Name="RegistrationMessage" Grid.Row="2" HorizontalAlignment="Center" Foreground="Red" Visibility="Hidden"/>
+        <Frame x:Name="MainFrame" Grid.Row="1"/>
+
+    </Grid>
+</Page>
